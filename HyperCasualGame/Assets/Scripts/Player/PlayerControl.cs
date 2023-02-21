@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     UnityEngine.Vector2 secondPressPos;
     UnityEngine.Vector2 currentSwipe;
     [SerializeField] private float _speed = 5.0f;
+    [SerializeField] private float jumpForce = 5;
     Animator _animator;
     [SerializeField] private GameObject _playerBody;
 
@@ -18,24 +19,24 @@ public class PlayerControl : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            _animator.SetBool("isJump", false);
-        }
-    }
 
 
     void Update()
     {
-        
         Swipe();
     }
 
     void FixedUpdate()
     {
         transform.position += transform.forward * _speed * Time.fixedDeltaTime;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            _animator.SetBool("isJump", false);
+        }
     }
 
     public void Swipe()
@@ -59,16 +60,14 @@ public class PlayerControl : MonoBehaviour
             if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
             {
 
-                _rb.velocity = new Vector3(0, 8, 0);
+                _rb.velocity = new Vector3(0, jumpForce, 0);
                 _animator.SetBool("isJump", true);
-                //transform.position += transform.up * 3;
             }
 
             //Left swipe
             if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
             {
                 _rb.velocity = new Vector3(-1f * SwipeXForce((secondPressPos.x - firstPressPos.x)), 0, 0);
-                //transform.position += (transform.right * -1) * 2;
                 
             }
 
@@ -76,14 +75,7 @@ public class PlayerControl : MonoBehaviour
             if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
             {
                 _rb.velocity = new Vector3(SwipeXForce((secondPressPos.x - firstPressPos.x)), 0, 0);
-                //transform.position += transform.right * 2;
             }
-            /*
-            //Down Swipe
-            if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
-            {
-                Debug.Log("down swipe");
-            }*/
         }
     }
 
