@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Ground
   - Obstacle
+  - Diamond
+  - Coin
+  - Bullet
+  - Magnet
+  - MagnetWall
+  - JumpWall
   layers:
   - Default
   - TransparentFX

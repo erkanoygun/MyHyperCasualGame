@@ -5,16 +5,6 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
