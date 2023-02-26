@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 namespace AwardsNameSpace
 {
@@ -9,11 +11,16 @@ namespace AwardsNameSpace
         PlayerManager playerManager;
         GameObject player;
         private bool isMagnetArea = false;
+        GameObject soundManager;
+        SoundManager soundManagerScript;
+        public TMP_Text coin_Text;
 
         private void Start()
         {
             player = GameObject.Find("Player");
             playerManager = player.GetComponent<PlayerManager>();
+            soundManager = GameObject.Find("SoundManager");
+            soundManagerScript = soundManager.GetComponent<SoundManager>();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -55,6 +62,8 @@ namespace AwardsNameSpace
                         if (_distance <= 0.65f)
                         {
                             playerManager.coin++;
+                            coin_Text.text = playerManager.coin.ToString();
+                            soundManagerScript.PlaySound(0);
                             DestroyObject(gameObject);
                         }
                     }

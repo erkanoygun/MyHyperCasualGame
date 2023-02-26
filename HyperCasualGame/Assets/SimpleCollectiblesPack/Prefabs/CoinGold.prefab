@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413896a966f5de740bdc8f643196b039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObjectPlayer: {fileID: 0}
+  coin_Text: {fileID: 0}
 --- !u!95 &1678814967
 Animator:
   serializedVersion: 4

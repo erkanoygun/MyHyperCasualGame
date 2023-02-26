@@ -17,6 +17,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private PlayerControl playerControlScript;
     public Image img_Magnet, img_Jump;
     [SerializeField] private GameObject[] _healtUI;
+    [SerializeField] private GameObject soundManager;
+    SoundManager soundManagerScript;
     public bool getIsMagnet
     {
         get { return isMagnet; }
@@ -26,6 +28,7 @@ public class PlayerManager : MonoBehaviour
     {
         img_Magnet.enabled = false;
         img_Jump.enabled = false;
+        soundManagerScript = soundManager.GetComponent<SoundManager>();
     }
 
 
@@ -35,11 +38,13 @@ public class PlayerManager : MonoBehaviour
         {
             coin++;
             coin_Text.text = coin.ToString();
+            soundManagerScript.PlaySound(0);
         }
         if (collision.gameObject.CompareTag("Diamond"))
         {
             diamond++;
             diamond_Text.text = diamond.ToString();
+            soundManagerScript.PlaySound(1);
         }
 
         if (collision.gameObject.CompareTag("Obstacle"))
