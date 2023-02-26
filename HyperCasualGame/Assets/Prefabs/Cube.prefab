@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeSize: 0.2
-  cubesInRow: 5
+  cubesInRow: 2
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4

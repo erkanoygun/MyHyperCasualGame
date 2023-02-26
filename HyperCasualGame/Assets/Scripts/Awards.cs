@@ -20,7 +20,6 @@ namespace AwardsNameSpace
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                //Destroy(gameObject);
                 DestroyObject(gameObject);
             }
             
@@ -55,6 +54,7 @@ namespace AwardsNameSpace
                         float _distance = Vector3.Distance(transform.position, player.transform.position);
                         if (_distance <= 0.65f)
                         {
+                            playerManager.coin++;
                             DestroyObject(gameObject);
                         }
                     }

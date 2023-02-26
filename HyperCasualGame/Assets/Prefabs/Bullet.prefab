@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1378594127068072024}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,8 +97,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4465665
-  m_Center: {x: 0.14097849, y: 0.037364475, z: 0}
+  m_Radius: 0.5538013
+  m_Center: {x: 0.033743642, y: 0.037364475, z: 0}
 --- !u!54 &-506228582969692334
 Rigidbody:
   m_ObjectHideFlags: 0

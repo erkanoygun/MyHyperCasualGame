@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6376859870918706342}
   m_Layer: 0
   m_Name: blade_hinge
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57d3a3067823d3a4f8be3bec22ab2c96, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57d3a3067823d3a4f8be3bec22ab2c96, type: 3}
 --- !u!4 &1384621874201858580 stripped
@@ -145,3 +149,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.111, y: 1.9999999, z: 0.43037498}
   m_Center: {x: -0.00000047683716, y: 0.99999994, z: 0.15968844}
+--- !u!114 &1139566021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764561056995854510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7704e4ff5cb3bb4f903919b704af00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
