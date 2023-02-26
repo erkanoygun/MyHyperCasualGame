@@ -5,7 +5,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    //[SerializeField] private TMP_Text coin_Text,diamond_Text;
     [SerializeField] private GameObject _playerGameObject;
     [SerializeField] private GameObject _winnerPanel;
     [SerializeField] private GameObject _gameOwerPanel;
